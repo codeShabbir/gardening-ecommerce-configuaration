@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: gardening-ecommerce-webapp-service
+        uri:
+          lb://gardening-ecommerce-webapp-service
+        predicates:
+        - path=/gardening-ecommerce-webapp-service/**
