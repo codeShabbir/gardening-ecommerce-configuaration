@@ -1,22 +1,20 @@
 server:
   port: 8081
-spring
+spring:
   datasource:
-    url: jdbc:h2:mem:gardeningappauth
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: root
+    url: jdbc:mysql://localhost:3306/gardeningapp
+    username: root
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+    database-platform: org.hibernate.dialect.MySQL5Dialect
     
 eureka:
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
       default-zone: http://localhost:8761/eureka
-  server:
-    wait-time-in-ms-when-sync-empty: 5
   instance:
     prefer-ip-address: true
 
